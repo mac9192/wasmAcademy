@@ -1,0 +1,28 @@
+[package]
+name = "counting-contract"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib" ]
+
+[features]
+library = []
+tests = ["library", "cw-multi-test" ]
+
+[dependencies]
+cosmwasm-std="1.0.0"
+serde = { version = "1.0.0", features = ["derive"] }
+cw-storage-plus = "0.14.0"
+thiserror = "1.0.0"
+schemars = "0.8.11"
+cw-multi-test = { version = "0.14.0", optional = true }
+cosmwasm-schema = "1.2.0"
+cw2 = "0.14.0"
+
+
+[dev-dependencies]
+cw-multi-test = "0.16.2"
+
